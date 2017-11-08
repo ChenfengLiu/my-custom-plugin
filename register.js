@@ -2,37 +2,58 @@ import { Reaction } from "/server/api";
 
 // Register package as ReactionCommerce package
 Reaction.registerPackage({
-  label: "My Custom Plugin",
-  name: "my-custom-plugin",
-  icon: "fa fa-weibo",
-  meta: {
-    version: "1.0.0"
-  },
+  label: "Hydrotik",
+  name: "hydrotik",
+  icon: "fa fa-vine",
   autoEnable: true,
   registry: [
     {
-      route: "/shop",
-      name: "shop",
-      template: "productsLanding",
+      route: "/about",
+      name: "about",
+      template: "aboutUs",
       workflow: "coreWorkflow"
     }
   ],
   layout: [{
-    layout: "coreLayoutMyCustom",
+    layout: "coreLayout",
     workflow: "coreWorkflow",
     collection: "Products",
     theme: "default",
     enabled: true,
-    priority: 1,
     structure: {
-      template: "productsLanding",
-      layoutHeader: "layoutHeader",
-      layoutFooter: "layoutFooter",
+      template: "productDetail",
+      layoutHeader: "layoutHeaderHydrotik",
+      layoutFooter: "layoutFooterHydrotik",
       notFound: "productNotFound",
       dashboardHeader: "",
       dashboardControls: "dashboardControls",
       dashboardHeaderControls: "",
       adminControlsFooter: "adminControlsFooter"
     }
-  }]
+  }],
+  settings: {
+    public: [
+      {
+        images: "images/carousel"
+      },
+      {
+        images: "images/hero/"
+      },
+      {
+        images: "images/editorial/"
+      },
+      {
+        images: "images/ajax-loader.gif"
+      },
+      {
+        fonts: "fonts/"
+      }
+    ],
+    npm: {
+      dependencies: {
+        "react-slick": "^0.14.5",
+        "slick-carousel": "^1.6.0"
+      }
+    }
+  }
 });

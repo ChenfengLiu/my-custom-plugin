@@ -1,0 +1,133 @@
+<template name="productsLanding">
+  {{#if ready}}
+    <div>
+      {{> React Products}}
+    </div>
+
+    {{#if loadMoreProducts}}
+      <div class="product-load-more" id="productScrollLimitLoader">
+        <button
+            class="btn btn-inverse btn-block btn-lg"
+            data-i18n="app.loadMoreProducts"
+            data-event-action="loadMoreProducts">Load more products</button>
+      </div>
+    {{/if}}
+
+    {{#unless Template.subscriptionsReady}}
+      <div class="spinner-container">
+        <div class="spinner"></div>
+      </div>
+    {{/unless}}
+  {{else}}
+    <div class="spinner-container spinner-container-lg">
+      <div class="spinner"></div>
+    </div>
+  {{/if}}
+</template>
+
+<template name="productsLandingIndex">
+  {{#if hasDashboardAccess}}
+    <div class="container">
+    </div>
+  {{else}}
+    {{> CustomHero}}
+    <div class="container editorial-grid-container">
+      <div class="row">
+        <div class="col-sm-6 container-editorial container-editorial--half" style="background-image: url('images/editorial/editorial-1.jpg');">
+          <div class="editorial-grid-content">
+            <p class="grey">Tech Stands</p>
+            <button type="button" class="btn btn-hero">Shop Now</button>
+          </div>
+        </div>
+        <div class="col-sm-6 container-editorial">
+            <div class="row container-editorial">
+                <div class="col-sm-6 container-editorial container-editorial--quarter" style="background-color:#f8f6e5;">
+                  <div class="editorial-grid-content">
+                    <p class="grey">Power Banks</p>
+                    <button type="button" class="btn btn-hero">Shop Now</button>
+                  </div>
+                </div>
+                <div class="col-sm-6 container-editorial container-editorial--quarter" style="background-image: url('images/editorial/editorial-6.jpg');">
+
+                </div>
+            </div>
+            <div class="row container-editorial">
+                <div class="col-sm-6 container-editorial container-editorial--quarter" style="background-image: url('images/editorial/editorial-7.jpg');">
+
+                </div>
+                <div class="col-sm-6 container-editorial container-editorial--quarter" style="background-color:#222533;">
+                  <div class="editorial-grid-content">
+                    <p class="white">Accessories</p>
+                    <button type="button" class="btn btn-hero">Shop Now</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-9 container-editorial">
+            <div class="row container-editorial">
+                <div class="col-sm-8 container-editorial container-editorial--quarter" style="background-image: url('images/editorial/editorial-2.jpg');">
+
+                </div>
+                <div class="col-sm-4 container-editorial container-editorial--quarter" style="background-color:#afbabb;">
+                  <div class="editorial-grid-content">
+                    <p class="grey">VR Headsets</p>
+                    <button type="button" class="btn btn-hero">Shop Now</button>
+                  </div>
+                </div>
+            </div>
+            <div class="row container-editorial">
+                <div class="col-sm-4 container-editorial container-editorial--quarter" style="background-color:#e5edf0;">
+                  <div class="editorial-grid-content">
+                    <p class="grey">Smart Home</p>
+                    <button type="button" class="btn btn-hero">Shop Now</button>
+                  </div>
+                </div>
+                <div class="col-sm-8 container-editorial container-editorial--quarter" style="background-image: url('images/editorial/editorial-8.jpg');">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 container-editorial container-editorial--half" style="background-image: url('images/editorial/editorial-3.jpg');">
+          <div class="editorial-grid-content">
+                    <p class="white">Speakers</p>
+                    <button type="button" class="btn btn-hero">Shop Now</button>
+                  </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+  {{#if ready}}
+    <div class="container home-best-sellers">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3>Best Sellers</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          {{> React Products}}
+        </div>
+
+        {{#if loadMoreProducts}}
+          <div class="product-load-more" id="productScrollLimitLoader">
+            <button
+                class="btn btn-inverse btn-block btn-lg"
+                data-i18n="app.loadMoreProducts"
+                data-event-action="loadMoreProducts">Load more products</button>
+          </div>
+        {{/if}}
+      </div>
+
+      {{#unless Template.subscriptionsReady}}
+        <div class="spinner-container">
+          <div class="spinner"></div>
+        </div>
+      {{/unless}}
+    </div>
+  {{else}}
+    <div class="spinner-container spinner-container-lg">
+      <div class="spinner"></div>
+    </div>
+  {{/if}}
+</template>
